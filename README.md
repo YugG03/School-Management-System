@@ -41,14 +41,14 @@ Validation: Joi
 Version Control: Git
 Folder Structure
 .
-├── controllers/         # API endpoint logic
-├── middleware/          # Authentication and validation logic
-├── models/              # MongoDB schemas
-├── routes/              # API routes
-├── utils/               # Utility functions (Cloudinary configuration, JSON handling, etc.)
-├── .env.example         # Sample environment variables
-├── README.md            # Documentation
-├── package.json         # Node.js dependencies
+├── controllers/         # API endpoint logic  
+├── middleware/          # Authentication and validation logic  
+├── models/              # MongoDB schemas  
+├── routes/              # API routes  
+├── utils/               # Utility functions (Cloudinary configuration, JSON handling, etc.)  
+├── .env.example         # Sample environment variables  
+├── README.md            # Documentation  
+├── package.json         # Node.js dependencies  
 Installation and Setup
 Clone the Repository:
 
