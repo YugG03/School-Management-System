@@ -52,77 +52,76 @@ Folder Structure
 Installation and Setup
 Clone the Repository:
 
-git clone https://github.com/your-username/your-repository-name.git
-cd your-repository-name
-Install Dependencies:
+git clone https://github.com/your-username/your-repository-name.git  
+cd your-repository-name  
+Install Dependencies:  
 
-npm install
-Set Up Environment Variables: Create a .env file in the root directory and configure the following variables:
+npm install  
+Set Up Environment Variables: Create a .env file in the root directory and configure the following variables:  
 
-DATABASE_URL=<Your MongoDB Connection String>
-JWT_SECRET=<Your JWT Secret>
-CLOUDINARY_CLOUD_NAME=<Your Cloudinary Cloud Name>
-CLOUDINARY_API_KEY=<Your Cloudinary API Key>
-CLOUDINARY_API_SECRET=<Your Cloudinary API Secret>
-Run the Application:
-node server.js
-Access the API:
+DATABASE_URL=<Your MongoDB Connection String>  
+JWT_SECRET=<Your JWT Secret>  
+CLOUDINARY_CLOUD_NAME=<Your Cloudinary Cloud Name>  
+CLOUDINARY_API_KEY=<Your Cloudinary API Key>  
+CLOUDINARY_API_SECRET=<Your Cloudinary API Secret>  
+Run the Application:  
+node server.js  
+Access the API:  
+Open http://localhost:5000 to access the API.  
+Environment Variables  
+The .env.example file contains the following variables that must be configured before running the application:  
 
-Open http://localhost:5000 to access the API.
-Environment Variables
-The .env.example file contains the following variables that must be configured before running the application:
+DATABASE_URL=<MongoDB Connection String>  
+JWT_SECRET=<JWT Secret>  
+CLOUDINARY_CLOUD_NAME=<Cloudinary Cloud Name>  
+CLOUDINARY_API_KEY=<Cloudinary API Key>  
+CLOUDINARY_API_SECRET=<Cloudinary API Secret>  
+API Endpoints  
+User Authentication  
+Method	Endpoint	Description  
+POST	/auth/login	User login  
+POST	/auth/logout	User logout  
+Student Management  
+Method	Endpoint	Description  
+POST	/students	Add a new student  
+GET	/students/:id	Get student by ID  
+PUT	/students/:id	Update student details  
+DELETE	/students/:id	Delete a student  
+POST	/students/upload	Upload student profile picture  
+Teacher Management  
+Method	Endpoint	Description  
+POST	/teachers	Add a new teacher  
+GET	/teachers/:id	Get teacher by ID  
+PUT	/teachers/:id	Update teacher details  
+DELETE	/teachers/:id	Delete a teacher  
+POST	/teachers/upload	Upload teacher profile picture  
+Class Management  
+Method	Endpoint	Description  
+POST	/classes	Add a new class  
+GET	/classes/:id	Get class by ID  
+PUT	/classes/:id	Update class details  
+DELETE	/classes/:id	Delete a class  
+Error Handling  
+Centralized Error Handling:  
 
-DATABASE_URL=<MongoDB Connection String>
-JWT_SECRET=<JWT Secret>
-CLOUDINARY_CLOUD_NAME=<Cloudinary Cloud Name>
-CLOUDINARY_API_KEY=<Cloudinary API Key>
-CLOUDINARY_API_SECRET=<Cloudinary API Secret>
-API Endpoints
-User Authentication
-Method	Endpoint	Description
-POST	/auth/login	User login
-POST	/auth/logout	User logout
-Student Management
-Method	Endpoint	Description
-POST	/students	Add a new student
-GET	/students/:id	Get student by ID
-PUT	/students/:id	Update student details
-DELETE	/students/:id	Delete a student
-POST	/students/upload	Upload student profile picture
-Teacher Management
-Method	Endpoint	Description
-POST	/teachers	Add a new teacher
-GET	/teachers/:id	Get teacher by ID
-PUT	/teachers/:id	Update teacher details
-DELETE	/teachers/:id	Delete a teacher
-POST	/teachers/upload	Upload teacher profile picture
-Class Management
-Method	Endpoint	Description
-POST	/classes	Add a new class
-GET	/classes/:id	Get class by ID
-PUT	/classes/:id	Update class details
-DELETE	/classes/:id	Delete a class
-Error Handling
-Centralized Error Handling:
+All routes are wrapped in error-handling middleware for consistency.  
+Custom Error Pages:  
 
-All routes are wrapped in error-handling middleware for consistency.
-Custom Error Pages:
+Invalid endpoints return a 404 JSON message.  
+Validation Errors:  
 
-Invalid endpoints return a 404 JSON message.
-Validation Errors:
+Missing or invalid fields return a 400 status code.  
+Additional Features  
+Custom ID Implementation:  
 
-Missing or invalid fields return a 400 status code.
-Additional Features
-Custom ID Implementation:
+Unique custom IDs for students, teachers, and classes.  
+Cloudinary Integration:  
 
-Unique custom IDs for students, teachers, and classes.
-Cloudinary Integration:
+Secure image uploads with separate folders for teachers and students.  
+Environment Configuration:  
 
-Secure image uploads with separate folders for teachers and students.
-Environment Configuration:
-
-Use of .env.example for ease of setup and maintenance.
-Contribution Guidelines
-Fork the repository.
-Create a new branch for your feature or bug fix.
-Submit a pull request with detailed explanation.
+Use of .env.example for ease of setup and maintenance.  
+Contribution Guidelines  
+Fork the repository.  
+Create a new branch for your feature or bug fix.  
+Submit a pull request with detailed explanation.  
